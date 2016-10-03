@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,52 +20,54 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQm-2T-X0h">
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLd-gV-Imv">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLd-gV-Imv" userLabel="Orange View">
                                         <color key="backgroundColor" red="1" green="0.72321778540000003" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="400" id="Rt6-xE-YQd"/>
-                                            <constraint firstAttribute="height" constant="400" id="goL-NO-Yw7"/>
+                                            <constraint firstAttribute="width" constant="400" id="V6j-4i-ml0"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yks-4E-dQl">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yks-4E-dQl" userLabel="Red View">
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="QKt-Nw-Hd3"/>
-                                            <constraint firstAttribute="width" constant="400" id="gZF-Jw-oh5"/>
+                                            <constraint firstAttribute="width" constant="400" id="rJD-PN-ZRh"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5v-kL-TL7">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y5v-kL-TL7" userLabel="Blue View">
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="400" id="7K8-Kc-uTz"/>
-                                            <constraint firstAttribute="height" constant="400" id="BiX-ni-eg7"/>
+                                            <constraint firstAttribute="width" constant="400" id="VGD-FJ-Cgm"/>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="RLd-gV-Imv" firstAttribute="centerY" secondItem="Y5v-kL-TL7" secondAttribute="centerY" id="48i-rT-5dz"/>
-                                    <constraint firstItem="Yks-4E-dQl" firstAttribute="top" secondItem="lQm-2T-X0h" secondAttribute="top" constant="100" id="4f3-ch-ozd"/>
-                                    <constraint firstItem="Yks-4E-dQl" firstAttribute="leading" secondItem="RLd-gV-Imv" secondAttribute="trailing" constant="20" id="C4L-ax-16E"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yks-4E-dQl" secondAttribute="trailing" constant="20" id="FVS-hR-uQf"/>
-                                    <constraint firstItem="RLd-gV-Imv" firstAttribute="top" secondItem="lQm-2T-X0h" secondAttribute="top" constant="100" id="GKN-7V-KzN"/>
-                                    <constraint firstItem="Y5v-kL-TL7" firstAttribute="top" secondItem="lQm-2T-X0h" secondAttribute="top" constant="100" id="IG8-aV-DeV"/>
-                                    <constraint firstAttribute="bottom" secondItem="RLd-gV-Imv" secondAttribute="bottom" constant="100" id="QM4-x6-4Fr"/>
-                                    <constraint firstItem="RLd-gV-Imv" firstAttribute="leading" secondItem="Y5v-kL-TL7" secondAttribute="trailing" constant="20" id="Qn4-gl-HXj"/>
-                                    <constraint firstItem="Yks-4E-dQl" firstAttribute="centerY" secondItem="Y5v-kL-TL7" secondAttribute="centerY" id="ST3-ak-J1Y"/>
-                                    <constraint firstAttribute="bottom" secondItem="Yks-4E-dQl" secondAttribute="bottom" constant="100" id="YtB-Pg-UoI"/>
-                                    <constraint firstAttribute="bottom" secondItem="Y5v-kL-TL7" secondAttribute="bottom" constant="100" id="eib-OG-XhU"/>
-                                    <constraint firstItem="Y5v-kL-TL7" firstAttribute="leading" secondItem="lQm-2T-X0h" secondAttribute="leading" constant="20" id="u6W-rm-yux"/>
+                                    <constraint firstItem="Yks-4E-dQl" firstAttribute="top" secondItem="lQm-2T-X0h" secondAttribute="top" constant="100" id="5C7-ac-pxY"/>
+                                    <constraint firstItem="RLd-gV-Imv" firstAttribute="top" secondItem="lQm-2T-X0h" secondAttribute="top" constant="100" id="7dy-oQ-0fu"/>
+                                    <constraint firstItem="Yks-4E-dQl" firstAttribute="leading" secondItem="RLd-gV-Imv" secondAttribute="trailing" constant="20" id="9eW-Re-8qj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yks-4E-dQl" secondAttribute="trailing" constant="20" id="RkJ-jI-6ds"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yks-4E-dQl" secondAttribute="bottom" constant="100" id="UOM-rZ-lVI"/>
+                                    <constraint firstAttribute="bottom" secondItem="RLd-gV-Imv" secondAttribute="bottom" constant="100" id="WnK-KL-tQM"/>
+                                    <constraint firstItem="Y5v-kL-TL7" firstAttribute="top" secondItem="lQm-2T-X0h" secondAttribute="top" constant="100" id="e08-Oz-aJP"/>
+                                    <constraint firstItem="Y5v-kL-TL7" firstAttribute="leading" secondItem="lQm-2T-X0h" secondAttribute="leading" constant="20" id="jOP-cm-7GN"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y5v-kL-TL7" secondAttribute="bottom" constant="100" id="lZB-mg-omo"/>
+                                    <constraint firstItem="RLd-gV-Imv" firstAttribute="leading" secondItem="Y5v-kL-TL7" secondAttribute="trailing" constant="20" id="xQn-fi-sLf"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="lQm-2T-X0h" secondAttribute="trailing" id="GSS-iN-i4E"/>
+                            <constraint firstItem="Y5v-kL-TL7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="27t-2P-bnr"/>
+                            <constraint firstItem="lQm-2T-X0h" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="GSS-iN-i4E"/>
                             <constraint firstItem="lQm-2T-X0h" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="UoH-1F-5dz"/>
                             <constraint firstItem="lQm-2T-X0h" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hzF-Hl-2Kh"/>
-                            <constraint firstItem="lQm-2T-X0h" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sdJ-Bh-pGi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Y5v-kL-TL7" secondAttribute="bottom" constant="147" id="r3O-S5-caY"/>
+                            <constraint firstItem="lQm-2T-X0h" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="sdJ-Bh-pGi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="blueView" destination="Y5v-kL-TL7" id="4Cl-Ig-fNV"/>
+                        <outlet property="scrollView" destination="lQm-2T-X0h" id="KRE-rB-UmB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

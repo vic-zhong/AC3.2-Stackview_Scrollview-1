@@ -67,7 +67,9 @@
 				145125A71DA1FBDC00A94953 /* Stackview_Scrollview-1Tests */,
 				145125911DA1FBDC00A94953 /* Products */,
 			);
+			indentWidth = 4;
 			sourceTree = "<group>";
+			tabWidth = 4;
 		};
 		145125911DA1FBDC00A94953 /* Products */ = {
 			isa = PBXGroup;
