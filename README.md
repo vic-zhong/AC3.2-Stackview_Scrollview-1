@@ -109,4 +109,5 @@ Here's a breakdown of why this works:
 7. Now, add another scroll view below the 3rd view
 8. Add 3 views to this scroll view, and set up constraints so that the scroll view scrolls horizontally. 
 
+*Hint: If you're having trouble with the nested scroll views, check out [this](http://www.appcoda.com/uiscrollview-introduction/)
 
