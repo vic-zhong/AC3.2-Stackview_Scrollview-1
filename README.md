@@ -95,30 +95,18 @@ Here's a breakdown of why this works:
 1. Remove the explicit width constraints of all three subviews. 
 2. Add constraints to each view so that they are relative to the `MainViewController.view`. For an extra challenge, set only 1 of the view's width relative to `MainViewController.view` and the others set relative to that view. (You can use the multiplier value of the constraints to make the width some multiple of the first, or you can use a constant value)
 3. It doesn't matter what size(s) for the width you choose, just make sure that the scroll view still scrolls horizontally. 
-
-
 1. Select `MainViewController` and embed in a `UITabBarController`
 2. Add a new view controller to the storyboard and set up the segue for it from the tab bar. 
 3. Recreate this lesson, this time creating a vertically scrolling scroll view with three subviews
 4. Again, it doesn't matter what sizes you make the views so long as the scroll view only scrolls vertically. 
-
-
 3. Add another view controller, and set its segue to the tab bar
 4. Add two scroll views such that each one takes up half of the screen (top half and bottom half, like in the lesson earlier)
 5. The top scroll view should have 3 subviews and scroll vertically
 6. The bottom scroll view should have 3 subviews and scroll horizontally. 
-
 4. One last view controller, this time you're doing a nested scroll view!
 5. Add a scroll view, pin it to the edges of the view controller's view.
 6. Add 3 view so that the scroll view scrolls vertically only
 7. Now, add another scroll view below the 3rd view
 8. Add 3 views to this scroll view, and set up constraints so that the scroll view scrolls horizontally. 
----
-
-
-# AC3.2 Stackview and Scrollview - Part 2
-## Scrollviews and Stackviews
-
-After the previous exercises, I'm sure you now have a profound appreciation for scroll views. So, it's time to introduce something that will make working with them much easier: `UIStackView`
 
 
