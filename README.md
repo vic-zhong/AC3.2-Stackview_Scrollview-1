@@ -3,9 +3,9 @@
 
 ---
 ### Readings (Required)
-2. [`Scroll View - Apple UIKit Catalog`](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/UIKitUICatalog/UIScrollView.html#//apple_ref/doc/uid/TP40012857-UIScrollView)
+2. [`Scroll View` - Apple UIKit Catalog](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/UIKitUICatalog/UIScrollView.html#//apple_ref/doc/uid/TP40012857-UIScrollView)
 2. [Working with Scroll Views - Apple](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/AutolayoutPG/WorkingwithScrollViews.html#//apple_ref/doc/uid/TP40010853-CH24-SW1)
-3. [Understanding UIScrollView - Ole Begemann (just sections "Coordinate System", "Bounds" & "Frame](https://oleb.net/blog/2014/04/understanding-uiscrollview/)
+3. [Understanding UIScrollView - Ole Begemann (just sections "Coordinate System", "Bounds" & "Frame)](https://oleb.net/blog/2014/04/understanding-uiscrollview/)
 3. [Scrolling Stack Views - Use Your Loaf](http://useyourloaf.com/blog/scrolling-stack-views/)
 
 #### Reference (Optional)
@@ -18,7 +18,7 @@ As the name would imply, a `UIScrollview` is a view that allows for scrolling: v
 
 Scroll views can be somewhat tricky to work with however, as they have one very important nuance to them regarding the interaction between a scrollview's frame, bounds and content. Ole Begemann's blog post explains this topic extremely well, and if you need I would suggest to refer to that blog's reading sections and animated gif.
 
-From the "Working with Scroll Views" link, this section is of particular importance to keep in minde:
+From the "Working with Scroll Views" link, this section is of particular importance to keep in mind:
 > To support scroll views, the system interprets constraints differently, depending on where the constraints are located.
   - Any constraints between the scroll view and objects outside the scroll view attach to the scroll view’s frame, just as with any other view.
   - For constraints between the scroll view and its content, the behavior varies depending on the attributes being constrained:
@@ -26,7 +26,7 @@ From the "Working with Scroll Views" link, this section is of particular importa
      - Constraints between the height, width, or centers attach to the scroll view’s frame.
   - You can also use constraints between the scroll view’s content and objects outside the scroll view to provide a fixed position for the scroll view’s content, making that content appear to float over the scroll view.
 
-That excerpt will become more relevant as we work with scroll views as making sure that our `contentSize` is being set correctly will be one of the more difficult things faced with using scroll views. Interface builder simplifies this a bit, to its credit. 
+That excerpt will become more relevant as we work with scroll views since making sure that our `contentSize` is being set correctly will be one of the more difficult things faced with using scroll views. Interface builder simplifies this a bit, to its credit. 
 
 ---
 ### 2. Simple Scrolling
@@ -34,22 +34,28 @@ That excerpt will become more relevant as we work with scroll views as making su
 1. In `Main.storyboard`, drag in a `UIScrollView` onto the `MainViewController` provided. Set it's constraints as: 
   2. `0 pt` on the top, left, and right (do not constrain to margins).
   3. Set the scroll view's `.bottom` to be equal to the view's `.centerY`
-4. Drag in 3 `UIView`s into the scroll view. For each view, set it's background color to something other than white. After tha, add the following constraints (you may want to have all three views selected for this):
+  4. ![Center Y Constraint](http://i.imgur.com/yGJx6Yem.png)
+4. Drag in 3 `UIView`s into the scroll view. For each view, set it's background color to something other than white (so we can visually identify them). After that, add the following constraints (you may want to have all three views selected for this):
+  4. ![Pre-Constraint Views](http://i.imgur.com/WGpJOFEm.png)
   5. `width` & `height`: `400 pt`
   6. `leading` & `trailing`: `20 pt`
   7. `top` & `bottom` : `100 pt`
   8. Then name each view based on it's background color.
   9. Note: For the demo, the left-to-right order of views are: `blueView`, `orangeView`, `redView`
+  10. ![Post-Constraint Views](http://i.imgur.com/S794APKm.png)
 8. Run the project at this point and observe the scroll view's behavior
 
 What exactly is going on? 
+*Note: You should be observing scrolling in both the x and y axis*
 
 We defined the `frame` of the scroll view to be the top half of the screen (top, left, right margins pinned, bottom pinned to the view's centerY). Since we gave an unbroken chain of constraints to the `UIView`s inside of the scroll view, the scrollview is able to calculate it's `contentSize` based on that. Since the `contentSize` will exceed the size of the `frame` we gave it, it extends further in both the x and y axis. The result, is a scroll view that has both horizontal and vertical scrolling. 
 
 > Debug and Discuss
-What would happen if we move the scroll view's bottom constraint to be equal to its superview's bottom constraint? Go ahead and make that change.
+What would happen if we move the scroll view's bottom constraint to be equal to its superview's bottom constraint? Go ahead and make that change now.
 
 1. Add an outlet from the scroll view to the `MainViewController` named `scrollView`
+  1. Note that the background for the scroll view has been changed to a different color to better visualize it
+  2. ![Full Height Scroll](http://i.imgur.com/demSnDwm.png)
 2. In `viewDidAppear`, add the following and take note of the differences between the values when you run the project: 
 ```swift
   override func viewDidAppear(_ animated: Bool) {
@@ -64,8 +70,7 @@ What would happen if we move the scroll view's bottom constraint to be equal to 
   }
 ```
 
-Back in storyboard, remove the explicit `height` constraints of all three scrollview subviews. 
-
+1. Back in storyboard, remove the `height` constraints of all three scroll view subviews. 
 1. You will now get an error about needing constraints for Y position or height. 
 
 - You may think of this as a mistake, after all you still have constraints to define the distance of the views to the top of the scrollview, the spacing between the views, the view widths, and the distance of the bottom of the views to the scroll view bottom which in turn is pinned to the bottom of it's view. Shouldn't the height of the views now just expand to accomodate the vertical set of constraints?
@@ -79,7 +84,9 @@ We defined our three view's top and bottom edges relative to the top and bottom 
 
 In order to resolve, set the view's top/bottom margin relative to a view other than the scroll view. Since the only other view is the `MainViewController`'s view, let use that. 
 
-1. Select left-most view in the scroll view's subviews (in my case `blueView`), and CTRL+Drag to `MainViewController`'s view, creating a vertical constraint to its top layout guide, and another one to it's bottom layout guide. This is all you should need. Rerun the project at this point. 
+1. Select left-most view in the scroll view's subviews (in my case `blueView`), and CTRL+Drag to `MainViewController`'s view, creating a vertical constraint to the top layout guide, and another one to it's bottom layout guide. This is all you should need. Rerun the project at this point. 
+
+![Finalized Constraints](http://i.imgur.com/VC6d0xI.png)
 
 Here's a breakdown of why this works:
 1. The `blueView` explicitly sets it's `height` when you create the constraints relative to `MainViewController.view`'s top and bottom layout guides
