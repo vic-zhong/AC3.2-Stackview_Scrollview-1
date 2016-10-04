@@ -148,10 +148,12 @@ We're going to take a basic look at a stack view to create a horizontally scroll
 2. Drag in 4 `UIImageView` and set their images to the 4 starter Pokémon (yes, Pikachu counts as a starter).
   - Set the background color of the image views to whatever you prefer, so long as it stands out on a white background
   - Change the image content mode to `Aspect Fit`. This resizing mode keeps the original image's aspect ratio and scales the image to fit inside the frame of the `UIImageView` (feel free to play around with the other content modes later to get a sense for each of them)
+  - ![Just Added](http://imgur.com/dHFwYqUm.jpg)
 3. Add the 4 image views to a stack view. There are a lot of ways to add a stack view to IB
   - You can drag in either a `Horizontal Stack View` or `Vertical Stack View` from the Object Library in the right pane
   - You can select the views you'd like to place in a stack view, and then go to Editor > Embed In.. > Stack View
   - Or, you can select the views and click on the "Stack" button, conveniently located next to the "Align", "Pin" and "Resolve AutoLayout Issues" buttons on the bottom right corner of IB.
+  - ![Vertically Stacked](http://imgur.com/cQzDXeEm.jpg)
 4. There are three major options to configure a stack view (refer to the Apple doc for full explanations)
   - `Axis`
   - `Alignment` 
@@ -161,11 +163,15 @@ We're going to take a basic look at a stack view to create a horizontally scroll
   - `Alignment` = `Fill`
   - `Distribution` = `Fill Equally`
 
-You already probably noticed how each of these options affects the contents of the stack view. What's rather nice is that the 4 icons, collectively, have a maximum height and width of `128pt`. But on their own, they have `width` or `height` slightly smaller than `128`. For example, the Squirtle icon has a width of slightly less than `128`, so in a `Horizontal` layout with `Fill` aligment and distribution you will be able to see that the `UIImageView` becomes a bit narrower. Using these slight differences, these 4 icons are a good way to visually identify the results of changes the different options of the stack view. 
+You already probably noticed how each of these options affects the contents of the stack view. What's rather nice is that the 4 icons, collectively, have a maximum height and width of `128pt`. But on their own, they have `width` or `height` slightly smaller than `128`. 
+![Squirtle Squirt](http://imgur.com/PFG4nrAm.jpg)
+For example, the Squirtle icon has a width of slightly less than `128`, so in a `Horizontal` layout with `Fill` aligment and distribution you will be able to see that the `UIImageView` becomes a bit narrower. Using these slight differences, these 4 icons are a good way to visually identify the results of changes the different options of the stack view. 
+![Perfect Padding](http://imgur.com/BPfbJxBl.jpg)
 
 1. Now just add the following constraints to the stackview: 
   - `8pt` left and top margins
 2. Run the project...
+  - ![Needs Scrolling](http://imgur.com/VFYTt0Bm.jpg)
   - Ah.. bummer. I guess we'll need a scroll view
 3. Select the stack view, then go to Editor > Embed In > Scroll View
 4. For the scroll view, you'll need the following constraints:
@@ -175,7 +181,11 @@ You already probably noticed how each of these options affects the contents of t
   - Center Vertically In Container
 6. Run the project
 
+![Final Scrolling](http://imgur.com/g8bI1gzl.jpg)
+
 What's nice about using the image views (along with the stack view) is that they define their own intrinsic content size. So we have far fewer constraints needed to satisfy autolayout. 
+
+![Constraints](http://imgur.com/D01DJ7Ql.jpg)
 
 ---
 ### 3. Exercises
