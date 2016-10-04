@@ -10,7 +10,7 @@
 
 #### Reference (Optional)
 1. [`UIScrollView` - Apple](https://developer.apple.com/reference/uikit/uiscrollview)
-2. [Using AutoLayout with views - Apple](helpful reference on constraints)[https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/UIKitUICatalog/index.html#//apple_ref/doc/uid/TP40012857-UIView-SW5)
+2. [Using AutoLayout with views - Apple (helpful reference on constraints)](https://developer.apple.com/library/content/documentation/UserExperience/Conceptual/UIKitUICatalog/index.html#//apple_ref/doc/uid/TP40012857-UIView-SW5)
 
 ---
 ### 1. Background
