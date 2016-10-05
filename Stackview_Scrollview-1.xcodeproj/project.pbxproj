@@ -15,6 +15,7 @@
 		145125B71DA2078E00A94953 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145125B61DA2078E00A94953 /* MainViewController.swift */; };
 		145125BA1DA207D100A94953 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145125B91DA207D100A94953 /* SquareView.swift */; };
 		145125BD1DA2088B00A94953 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145125BC1DA2088B00A94953 /* ColorHelper.swift */; };
+		9EAF59841DA57A1B00811D39 /* PokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EAF59831DA57A1B00811D39 /* PokeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		145125B61DA2078E00A94953 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "View Controllers/MainViewController.swift"; sourceTree = "<group>"; };
 		145125B91DA207D100A94953 /* SquareView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SquareView.swift; path = Views/SquareView.swift; sourceTree = "<group>"; };
 		145125BC1DA2088B00A94953 /* ColorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorHelper.swift; path = Helpers/ColorHelper.swift; sourceTree = "<group>"; };
+		9EAF59831DA57A1B00811D39 /* PokeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				145125B61DA2078E00A94953 /* MainViewController.swift */,
+				9EAF59831DA57A1B00811D39 /* PokeViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EAF59841DA57A1B00811D39 /* PokeViewController.swift in Sources */,
 				145125BA1DA207D100A94953 /* SquareView.swift in Sources */,
 				145125941DA1FBDC00A94953 /* AppDelegate.swift in Sources */,
 				145125B71DA2078E00A94953 /* MainViewController.swift in Sources */,
